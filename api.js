@@ -37,7 +37,7 @@ router.get('/f', function (req, res) {
 router.post('/d', function(req, res) {
     const cycki = req.body;
     console.log("cipeczka")
-    res.json(req.body.task)
+    res.json(req.body)
  
  });
 router.post('/addUser', function (req, res) {
