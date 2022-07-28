@@ -3,10 +3,9 @@ var app = express();
 var fs = require("fs");
 
 app.get('/listUsers', function (req, res) {
-   fs.readFile("./user.json", 'utf8', function (err, data) {
-      console.log( data );
-      res.end( data );
-   });
+   
+      res.end( "{cycuszki:cipeczka}" );
+  
 
 })
 
