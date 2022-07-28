@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const fs = require("fs")
 const app = express();
 
 //Here we are configuring express to use body-parser as middle-ware.
@@ -23,6 +23,9 @@ var user = {
        "id": 4
     }
  }
+ app.post('/', (req, res) => {
+    res.send('POST request to the homepage')
+  })
  app.use("/", router);
 router.get('/f', function (req, res) {
    fs.readFile("./user.json",'utf8',(err,data)=>{res.send(data)})
