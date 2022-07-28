@@ -1,12 +1,13 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-
-app.get('/listUsers', function (req, res) {
+const port = process.env.PORT || "1337";
+app.set("port", port);
+app.get('/', function (req, res) {
    
       res.end( "{cycuszki:cipeczka}" );
   
 
 })
-app.set('port', process.env.PORT || 3000);
+
 app.listen(3000);
