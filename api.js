@@ -34,9 +34,9 @@ router.get('/f', function (req, res) {
 
 })
 
-router.post('/d', function(req, res) {
-    const cycki = req.body;
-    console.log("cipeczka")
+router.post('/sendHours', function(req, res) {
+    
+   
     res.json(req.body)
  
  });
