@@ -13,7 +13,7 @@ const db = new sqlite3.Database('./godziny.db');
     });
    }
 
-  const Insert=()=> {
+  const Insert=(data)=> {
     console.log("cipeczka")
     db.serialize(() => {
     db.run("insert into july values('data.data',8,8,8)");
