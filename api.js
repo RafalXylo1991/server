@@ -31,7 +31,7 @@ router.post('/sendHours', function(req, res) {
  
  });
 router.get('/create', function(req,res){
-
+   sql.Insert(req.body);
 const result = sql.Select().then((data)=>{res.send(data)});
 
 })
