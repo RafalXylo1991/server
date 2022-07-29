@@ -25,8 +25,8 @@ app.use(bodyParser.json());
 
 router.post('/sendHours', function(req, res) {
     
-
-   sql.Insert();
+   const insert = sql.Insert().then((data)=>{res.send(data)});
+  
 
    const result = sql.Select().then((data)=>{res.send(data)});
  
