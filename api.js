@@ -26,8 +26,9 @@ app.use(bodyParser.json());
 router.post('/sendHours', function(req, res) {
     
 sql.CreateMonth();
-sql.Insert(req.body);
-    res.json(req.body)
+sql.Insert();
+
+    res.json(sql.Select())
  
  });
 

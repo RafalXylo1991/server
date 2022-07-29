@@ -1,7 +1,8 @@
 
-const baza = require('./node_modules/sqlite3');
+const sqlite3 = require('./node_modules/sqlite3');
 
-     const db = new baza.Database('./chinook.db');
+const db = new sqlite3.Database('./godziny.db');
+ 
     
 
 
@@ -12,10 +13,10 @@ const baza = require('./node_modules/sqlite3');
     });
    }
 
-  const Insert=(data)=> {
+  const Insert=()=> {
     console.log("cipeczka")
     db.serialize(() => {
-    db.run("insert into july values("+data.data+",8,8,8)");
+    db.run("insert into july values('data.data',8,8,8)");
   });
  }
   const Select=()=> {
