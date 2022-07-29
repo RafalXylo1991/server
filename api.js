@@ -34,7 +34,7 @@ router.post('/sendHours', function(req, res) {
 router.get('/create', function(req,res){
 sql.CreateMonth();
   console.log(sql.Select());
-
+return res.send(sql.Select())
 })
  
 app.listen(port, () => console.log(`Server running on localhost:${port}`));
