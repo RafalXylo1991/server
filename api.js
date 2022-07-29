@@ -28,11 +28,11 @@ router.post('/sendHours', function(req, res) {
 
    sql.Insert();
 
-    res.json(sql.Select())
+   const result = sql.Select().then((data)=>{res.send(data)});
  
  });
 router.get('/create', function(req,res){
-const result = sql.Select().then((data)=>{res.send(data)});
+
 
 
 })
