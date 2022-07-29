@@ -25,15 +25,14 @@ app.use(bodyParser.json());
 
 router.post('/sendHours', function(req, res) {
     
-   const insert = sql.Insert().then((data)=>{res.send(data)});
-  
-
+   const insert = sql.Insert().then((data)=>{alert("cipeczka")});
    const result = sql.Select().then((data)=>{res.send(data)});
+
  
  });
 router.get('/create', function(req,res){
-
-
+sql.Insert();
+const result = sql.Select().then((data)=>{res.send(data)});
 
 })
  
