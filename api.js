@@ -25,12 +25,16 @@ app.use(bodyParser.json());
 
 router.post('/sendHours', function(req, res) {
     
-sql.CreateMonth();
-sql.Insert();
+
+   sql.Insert();
 
     res.json(sql.Select())
  
  });
+router.get('/create', function(req,res){
+sql.CreateMonth();
+  console.log(sql.Select());
 
+})
  
 app.listen(port, () => console.log(`Server running on localhost:${port}`));
