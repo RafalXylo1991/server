@@ -25,13 +25,13 @@ app.use(bodyParser.json());
 
 router.post('/sendHours', function(req, res) {
     
-
+   sql.Insert();
    const result = sql.Select().then((data)=>{res.json(data)});
 
  
  });
 router.get('/create', function(req,res){
-sql.Insert();
+
 const result = sql.Select().then((data)=>{res.send(data)});
 
 })
