@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 router.post('/sendHours', function(req, res) {
     
-   const insert = sql.Insert().then((data)=>{alert("cipeczka")});
+
    const result = sql.Select().then((data)=>{res.send(data)});
 
  
