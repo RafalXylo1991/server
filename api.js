@@ -26,11 +26,8 @@ router.put("/", (req,res)=>{
 
 })
 app.post('/sendHours', async (req, res)=> {
-   const { error } = await sql.Select().then((data)=>{ console.log(data);res.json(data)});
-   if (error){
-   res.status(400).send(error.details[0].message)
-   console.log(error)
-   }
+   const result= await sql.Select().then((data)=>{ console.log(data);res.json(data)});
+  
     
      
   
