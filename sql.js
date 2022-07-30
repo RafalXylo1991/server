@@ -18,7 +18,7 @@ const db = new sqlite3.Database('./godziny.db');
       db.serialize(() => {
         db.all("insert into july values('data.data',8,8,8)", (err, rows) => {
         
-          resolve(rows);
+          resolve(done);
         });
       });
     });
