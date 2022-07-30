@@ -23,10 +23,11 @@ app.use(bodyParser.json());
  app.use("/", router);
 
 
-router.post('/sendHours', function(req, res) {
+router.put('/sendHours', async (req, res)=> {
     
-   sql.Insert(req.body);
-   const result = sql.Select().then((data)=>{res.json(data)});
+ const dodaj= await sql.Insert(req.body);
+  
+   const result = await sql.Select().then((data)=>{res.json(data)});
 
  
  });
