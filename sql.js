@@ -13,11 +13,8 @@ const db = new sqlite3.Database('./godziny.db');
     });
    }
 
-  const Insert=(data)=> {
-    console.log("cipeczka")
-    db.serialize(() => {
-    db.run("insert into july values('data.data',8,8,8)");
-  });
+  const Insert=()=> {
+ return  promise2;
  }
   const Select=()=> {
  
@@ -33,13 +30,24 @@ const getH=async()=>{
 		});
 	});
   
+  
 
 
 
 
 }
+const setH=async()=>{
+  return new Promise((resolve, reject) => {
+		db.serialize(() => {
+			db.all("insert into july values('data.data',8,8,8)", (err, rows) => {
+			
+				resolve(rows);
+			});
+		});
+	});
+}
 let promise = getH() // => Promise { <pending> }
-	
+let promise2=setH();
   
   module.exports = {CreateMonth,Insert,Select};
  
