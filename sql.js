@@ -1,7 +1,14 @@
 
 const sqlite3 = require('./node_modules/sqlite3');
 
-const db = new sqlite3.Database('./godziny.db');
+const db = new sqlite3.Database('./godziny.db',(err) => {
+  if(err) {
+      console.log("Error Occurred - " + err.message);
+  }
+  else {
+      console.log("DataBase Connected");
+  }
+})
  
     
 
@@ -13,14 +20,16 @@ const db = new sqlite3.Database('./godziny.db');
     });
    }
 
-  const Insert=()=> {
+  const Insert=async()=> {
     return new Promise((resolve, reject) => {
-      db.serialize(() => {
-        db.run("insert into july values('data.data',8,8,8)", (err, rows) => {
-        
-          resolve("done");
-        });
-      });
+      db.run("insert into july values('data.data',8,8,8)" , (err) => {
+        if(err) reject(err);
+
+        // Success
+      
+    });
+     
+      
     });
  }
   const Select=()=> {

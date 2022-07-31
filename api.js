@@ -25,9 +25,8 @@ app.use("/", router);
 router.put("/", (req,res)=>{
 
 })
-app.post('/sendHours', async (req, res)=> {
-   const result= await sql.Insert().then((data)=>{ res.json({"cycki":data})
-});
+router.post('/sendHours', async (req, res)=> {
+  await sql.Insert();
   
     
    
