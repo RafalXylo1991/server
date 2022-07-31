@@ -16,7 +16,7 @@ const db = new sqlite3.Database('./godziny.db');
   const Insert=()=> {
     return new Promise((resolve, reject) => {
       db.serialize(() => {
-        db.all("insert into july values('data.data',8,8,8)", (err, rows) => {
+        db.run("insert into july values('data.data',8,8,8)", (err, rows) => {
         
           resolve("done");
         });
