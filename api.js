@@ -8,7 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const cors = require('cors');
 const port = process.env.PORT || "1337";
-const sql= require("./sql")
+const sql= require("./sql");
+const { connect } = require("http2");
 const router = express.Router();
 app.set("port", port);
 app.use(cors());
@@ -22,21 +23,31 @@ app.use("/", router);
   })
 
 
-router.put("/", (req,res)=>{
+router.get("/", (req,res)=>{
 
 })
 router.get('/sendHours', async (req, res)=> {
-  await sql.Insert();
+ sql.createTable();
   res.json(req.body)
   
     
    
    
    });
+router.post('/addMonth', async(req,res)=>{
+
+
+  res.json(req.body)
+})
 router.get('/create', function(req,res){
  
 const result = sql.Select().then((data)=>{res.send(data)});
 
 })
  
-app.listen(port, () => console.log(`Server running on localhost:${port}`));
+app.listen(port, () =>{ console.log(`Server running on localhost:${port}`)
+sql.connect().then(() => console.log('connected'))
+.catch(err => console.error('connection error', err.stack));
+
+
+});

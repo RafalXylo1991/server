@@ -1,60 +1,41 @@
 
+
+
 const sqlite3 = require('./node_modules/sqlite3');
-
-const db = new sqlite3.Database('./godziny.db',(err) => {
-  if(err) {
-      console.log("Error Occurred - " + err.message);
-  }
-  else {
-      console.log("DataBase Connected");
-  }
-})
- 
+const { Client } = require('pg')
+const client = new Client({
+  host: 'ec2-50-19-255-190.compute-1.amazonaws.com',
+  port: 5432,
+  user: 'fqwlgpbmahxrza',
+  database:'dd3ues1j43iln2',
+  password: '54195ef5a658458a0a0d8bbcba325fec0b244d299e7f4ec45968b7ab406134cf',
+  ssl: { rejectUnauthorized: false }
     
+})
 
-
-  function CreateMonth() {
-      console.log("cipeczka")
-      db.serialize(() => {
-      db.run("CREATE table if not exists  july(Data text, Godziny integer, Nadgodziny integer, Setki integer)");
-    });
-   }
-
-  const Insert=async()=> {
-    return new Promise((resolve, reject) => {
-      db.run("insert into july values('data.data',8,8,8)" , (err) => {
-        if(err) reject(err);
-
-        // Success
-      
-    });
-     
-      
-    });
- }
-  const Select=()=> {
+const connect=async()=>{
  
-  return promise;
-}
-const getH=async()=>{
-  return new Promise((resolve, reject) => {
-		db.serialize(() => {
-			db.all("SELECT * from july", (err, rows) => {
-			
-				resolve(rows);
-			});
-		});
-	});
-  
+  client.connect();
   
 
-
+ 
+ 
 
 
 }
+    
+const createTable=async()=>{
 
-let promise = getH() // => Promise { <pending> }
+  client.query('CREATE TABLE COMPANY(NAME TEXT  NOT NULL );', (err, res) => {
+    if (err) throw err
+    console.log(res)
+    client.end()
+  })
+}
+
+
+
 
   
-  module.exports = {CreateMonth,Insert,Select};
+  module.exports = {connect,createTable};
  
