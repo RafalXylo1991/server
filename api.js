@@ -27,7 +27,7 @@ router.get("/", (req,res)=>{
 
 })
 router.get('/sendHours', async (req, res)=> {
- sql.createTable(req.body);
+ sql.createTable(req.body.cipka);
   res.send(req.body)
   
     
