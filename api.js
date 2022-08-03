@@ -35,8 +35,8 @@ router.get('/sendHours', async (req, res)=> {
    
    });
 router.post('/addMonth', async(req,res)=>{
-  const obj=JSON.parse(req.body)
-  console.log(obj)
+  
+  console.log(Object.keys(req.body));
  //    sql.createTable(req.body)
 
   res.json(req.body)
