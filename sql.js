@@ -26,7 +26,7 @@ const connect=async()=>{
     
 const createTable=async(table)=>{
 
-  client.query('CREATE TABLE '+table.August+'(NAME TEXT  NOT NULL );', (err, res) => {
+  client.query('CREATE TABLE '+table+'(NAME TEXT  NOT NULL );', (err, res) => {
     if (err) throw err
     console.log(res)
     client.end()
