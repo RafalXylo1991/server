@@ -28,7 +28,7 @@ router.get("/", (req,res)=>{
 })
 router.get('/sendHours', async (req, res)=> {
  sql.createTable();
-  res.json(req.body)
+  res.send(req.body)
   
     
    
