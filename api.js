@@ -37,7 +37,7 @@ router.get('/sendHours', async (req, res)=> {
 router.post('/addMonth', async(req,res)=>{
      sql.createTable(req.body)
 
-return  res.json(req.body)
+  res.json("{"+req.body+":cipka")
 })
 router.get('/create', function(req,res){
  
