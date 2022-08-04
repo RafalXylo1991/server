@@ -29,7 +29,7 @@ router.get("/", (req,res)=>{
 })
 router.post('/sendHours', async (req, res)=> {
 
- 
+ console.log(req.body)
   const cycki = JSON.parse(req.body);
 
 console.log(cycki.month)
