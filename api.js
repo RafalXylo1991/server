@@ -38,7 +38,7 @@ router.post('/addMonth', async(req,res)=>{
   
   const obj = Object.keys(req.body);
 const cipa = JSON.parse(obj);
-  console.log(Object.keys(obj))
+  console.log(req.body)
  //    sql.createTable(req.body)
 
   res.json(req.body)
