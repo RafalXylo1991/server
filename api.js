@@ -34,7 +34,7 @@ router.post('/sendHours', async (req, res)=> {
  
 
 console.log(obj[0])
-
+const cycki=JSON.parse(obj[0])
 
    
    
