@@ -29,7 +29,7 @@ router.get("/", (req,res)=>{
 router.post('/sendHours', async (req, res)=> {
   const obj = Object.keys(req.body);
  
-console.log(obj.month)
+console.log(obj.forEach(e=>console.log(e)))
   
     
    
