@@ -33,7 +33,7 @@ router.post('/sendHours', async (req, res)=> {
  
  
 
-console.log(obj)
+console.log(obj[0])
 
 
    
