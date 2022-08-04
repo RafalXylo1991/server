@@ -29,7 +29,7 @@ router.get("/", (req,res)=>{
 router.post('/sendHours', async (req, res)=> {
   const obj = Object.keys(req.body);
  
-obj.forEach(e=>{obj=JSON.parse(e)})
+console.log(obj[0])
   
     
    
