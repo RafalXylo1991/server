@@ -32,6 +32,7 @@ router.post('/sendHours', async (req, res)=> {
  
   const cycki = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
 console.log(typeof(obj[0]))
+console.log(cycki.name)
 
 
    
