@@ -27,8 +27,8 @@ router.get("/", (req,res)=>{
 
 })
 router.get('/sendHours', async (req, res)=> {
- sql.createTable(req.body.cipka);
-  res.send(req.body)
+ sql.createTable(req.body.cipka).then((result)=>{res.send("Miesiąc został utworzony")});
+  
   
     
    
