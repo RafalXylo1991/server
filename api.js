@@ -30,9 +30,9 @@ router.get("/", (req,res)=>{
 router.post('/sendHours', async (req, res)=> {
   const obj = Object.keys(req.body);
  
-  const cycki = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
-console.log(typeof(obj[0]))
-console.log(cycki.name)
+  const cycki = JSON.parse(obj[0]);
+
+console.log(cycki.month)
 
 
    
