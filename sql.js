@@ -26,7 +26,7 @@ const connect=async()=>{
     
 const createTable=async(table)=>{
 
-  client.query('CREATE TABLE '+table+'(data TEXT,nadgodziny integer ,week integer, saturday integer, sunday integer );', (err, res) => {
+  client.query('CREATE TABLE if not exists '+table+'(data TEXT,nadgodziny integer ,week integer, saturday integer, sunday integer );', (err, res) => {
     if (err) throw err
     console.log(res)
     client.end()
