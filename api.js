@@ -10,6 +10,7 @@ const cors = require('cors');
 const port = process.env.PORT || "1337";
 const sql= require("./sql");
 const { connect } = require("http2");
+const { Console } = require("console");
 const router = express.Router();
 app.set("port", port);
 app.use(cors());
@@ -29,9 +30,9 @@ router.get("/", (req,res)=>{
 router.post('/sendHours', async (req, res)=> {
   const obj = Object.keys(req.body);
  
-console.log(obj[0]['month'])
-  
-    
+
+var obj3 = JSON.parse(obj[0]);
+    console.log(obj3)
    
    
    });
