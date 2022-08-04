@@ -26,8 +26,8 @@ app.use("/", router);
 router.get("/", (req,res)=>{
 
 })
-router.get('/sendHours', async (req, res)=> {
- sql.createTable(req.body.cipka)
+router.post('/sendHours', async (req, res)=> {
+console.log(req.body)
   
     
    
@@ -37,7 +37,7 @@ router.post('/addMonth', async(req,res)=>{
   
   const obj = Object.keys(req.body);
 
-  console.log(obj)
+ 
     sql.createTable(obj).then((result)=>{res.send("Miesiąc został utworzony")});
   
 
