@@ -27,8 +27,7 @@ router.get("/", (req,res)=>{
 
 })
 router.get('/sendHours', async (req, res)=> {
- sql.createTable(req.body.cipka).then((result)=>{res.send("Miesiąc został utworzony")});
-  
+ sql.createTable(req.body.cipka)
   
     
    
@@ -39,9 +38,10 @@ router.post('/addMonth', async(req,res)=>{
   const obj = Object.keys(req.body);
 
   console.log(obj)
-    sql.createTable(obj)
+    sql.createTable(obj).then((result)=>{res.send("Miesiąc został utworzony")});
+  
 
-  res.json(req.body)
+ 
 })
 router.get('/create', function(req,res){
  
