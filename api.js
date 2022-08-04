@@ -31,8 +31,7 @@ router.post('/sendHours', async (req, res)=> {
   const obj = Object.keys(req.body);
  
 
-var obj3 = JSON.parse(obj[0]);
-    console.log(obj3)
+console.log(typeof(obj))
    
    
    });
