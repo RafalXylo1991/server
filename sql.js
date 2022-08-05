@@ -32,10 +32,18 @@ const createTable=async(table)=>{
     client.end()
   })
 }
+const insertData=async(data)=>{
+
+  client.query('insert into '+data.month+'values('+data.data+','+data.nadgodziny+','+parseInt(data.week)+','+parseInt(data.saturday)+','+parseInt(data.sunday)+')', (err, res) => {
+    if (err) throw err
+    console.log(res)
+    client.end()
+  })
+}
 
 
 
 
   
-  module.exports = {connect,createTable};
+  module.exports = {connect,createTable,insertData};
  
