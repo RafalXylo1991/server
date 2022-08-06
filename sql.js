@@ -38,7 +38,7 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
   client.query(x, (err, res) => {
     resolve("Data inserted")
     if (err) throw err
-    reject("Data insert failed")
+   
     console.log(res)
     client.end()
   })
