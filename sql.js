@@ -34,8 +34,8 @@ const createTable=async(table)=>{
 }
 const insertData=async(data)=>{
   console.log(typeof(data.week))
-console.log("insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")")
-  client.query("insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +data.week=="true"?1:0+","+data.saturday=="true"?1:0+","+data.sunday=="true"?1:0+")", (err, res) => {
+let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")"
+  client.query(x, (err, res) => {
     if (err) throw err
     console.log(res)
     client.end()
