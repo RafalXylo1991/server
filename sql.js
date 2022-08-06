@@ -29,7 +29,7 @@ console.log('cipeczk')
   client.query('CREATE TABLE if not exists '+table+'(data TEXT,nadgodziny integer ,week integer, saturday integer, sunday integer );', (err, res) => {
     if (err) throw err
     console.log(res)
-    client.end()
+  
   })
 }
 const insertData=async(data)=>{
@@ -41,7 +41,7 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
     if (err) throw err
    
     console.log(res)
-    client.end()
+ 
   })
 }
 
