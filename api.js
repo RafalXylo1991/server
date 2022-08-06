@@ -36,7 +36,7 @@ router.post('/sendHours', async (req, res)=> {
 console.log(obj[0])
 const cycki=JSON.parse(obj[0])
 
-sql.insertData(cycki).then((result)=>{res.send(result)})
+sql.insertData(cycki).then((result)=>{res.send('cycki')})
 
    
    
