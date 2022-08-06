@@ -36,7 +36,7 @@ router.post('/sendHours', async (req, res)=> {
 console.log(obj[0])
 const cycki=JSON.parse(obj[0])
 
-sql.insertData(cycki).then((result)=>{res.send(result)})
+await sql.insertData(cycki).then((result)=>{res.send("Done")}).catch(res.send('Failed'))
 
    
    
@@ -46,7 +46,7 @@ router.post('/addMonth', async(req,res)=>{
   const obj = Object.keys(req.body);
 
  
-    sql.createTable(obj).then((result)=>{res.send("Miesiąc został utworzony")});
+    sql.createTable(obj).then((result)=>{res.send("Miesiąc został utworzony")})
   
 
  
