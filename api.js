@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/", router);
  app.post('/', (req, res) => {
-    res.send('POST request to the homepage')
++    res.send('POST request to the homepage')
   })
 
 
@@ -35,8 +35,8 @@ router.post('/sendHours', async (req, res)=> {
 
 console.log(obj[0])
 const cycki=JSON.parse(obj[0])
-console.log(cycki.week)
-sql.insertData(cycki)
+
+sql.insertData(cycki).then((result)=>{res.send(result)})
 
    
    
