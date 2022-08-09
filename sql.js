@@ -44,10 +44,23 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
  
   })
 }
+const getOneMonth=async(month)=>{
+  console.log(typeof(data.week))
+let x ="select * from "+month;
+  client.query(x, (err, res) => {
+    return res;
+    
+    if (err) throw err
+   
+    console.log(res)
+ 
+  })
+
+}
 
 
 
 
   
-  module.exports = {connect,createTable,insertData};
+  module.exports = {connect,createTable,insertData,getOneMonth};
  

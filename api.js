@@ -51,6 +51,13 @@ router.post('/addMonth', async(req,res)=>{
 
  
 })
+router.get('/getOneMonth', async(req,res)=>{
+  
+console.log(sql.getOneMonth())
+  
+
+ 
+})
 router.get('/create', function(req,res){
  
 const result = sql.Select().then((data)=>{res.send(data)});
