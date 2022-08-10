@@ -49,7 +49,7 @@ const getOneMonth=async(month)=>{
 let x ="select * from august";
   client.query(x, (err, res) => {
     console.log(res.rows)
-    return res.rows;
+   resolve( res.rows);
     
     if (err) throw err
    
