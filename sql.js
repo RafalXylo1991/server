@@ -48,11 +48,12 @@ const getOneMonth=async(month)=>{
   console.log(typeof(data.week))
 let x ="select * from august";
   client.query(x, (err, res) => {
+    console.log(res)
     return res;
     
     if (err) throw err
    
-    console.log(res)
+    
  
   })
 
