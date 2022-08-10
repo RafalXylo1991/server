@@ -53,10 +53,10 @@ router.post('/addMonth', async(req,res)=>{
 })
 router.get('/getOneMonth', async(req,res)=>{
   
-//sql.getOneMonth().then((result)=>{res.send(result.toString())})
+sql.getOneMonth().then((result)=>{res.send(result)})
 
   
-res.send("cipeczka")
+
  
 })
 router.get('/create', function(req,res){
