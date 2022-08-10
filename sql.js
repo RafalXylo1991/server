@@ -45,18 +45,23 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
   })
 }
 const getOneMonth=async(month)=>{
-  var result;
-let x ="select * from august";
-client.query(x, (err, res) => {
-    result=res.rows;
-  
-    
-   
-   
-    
- 
+  return new Promise((resolve,recive)=>{
+    let x ="select * from august";
+    client.query(x, (err, res) => {
+        
+      
+        resolve(res.rows)
+       
+       
+        
+     
+      })
+
+
+
   })
-console.log(result)
+
+
 }
 
 
