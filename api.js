@@ -54,7 +54,7 @@ router.post('/addMonth', async(req,res)=>{
 router.get('/getOneMonth', async(req,res)=>{
   
 console.log(sql.getOneMonth())
-res.send(sql.getOneMonth());
+res.json(sql.getOneMonth());
   
 
  
