@@ -51,7 +51,7 @@ router.post('/addMonth', async(req,res)=>{
 
  
 })
-router.get('/getOneMonth', async(req,res)=>{
+router.post('/getOneMonth', async(req,res)=>{
   
 sql.getOneMonth().then((result)=>{res.json(result)})
 
@@ -59,8 +59,8 @@ sql.getOneMonth().then((result)=>{res.json(result)})
 
  
 })
-router.post('/create', function(req,res){
- console.log(req.body)
+router.get('/create', function(req,res){
+ 
 const result = sql.Select().then((data)=>{res.send(data)});
 
 })
