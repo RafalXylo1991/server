@@ -51,7 +51,7 @@ router.post('/addMonth', async(req,res)=>{
 
  
 })
-router.get('/getOneMonth', async(req,res)=>{
+router.get('/getOneMonth/:month', async(req,res)=>{
   console.log(req.body)
 sql.getOneMonth().then((result)=>{res.json(result)})
 
