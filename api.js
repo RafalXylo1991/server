@@ -60,7 +60,7 @@ sql.getOneMonth().then((result)=>{res.json(result)})
  
 })
 router.post('/create', function(req,res){
- 
+ console.log(req.body)
 const result = sql.Select().then((data)=>{res.send(data)});
 
 })
