@@ -65,7 +65,7 @@ const result = sql.Select().then((data)=>{res.send(data)});
 
 })
 router.delete('/deleteHours/:month/:data', function(req,res){
- sql.delHours(req.params.month,req.params.data).then(()=>{res.send("Usunięto")})
+//' sql.delHours(req.params.month,req.params.data).then(()=>{res.send("Usunięto")})
   
   })
 app.listen(port, () =>{ console.log(`Server running on localhost:${port}`)
