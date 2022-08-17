@@ -75,7 +75,7 @@ const delHours=async(month,data)=>{
        
        
      
-      }).
+      })
 
 
 
