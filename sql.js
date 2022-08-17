@@ -73,8 +73,7 @@ const delHours=async(month,data)=>{
       
      resolve("Data was deleted...")
        
-       recive(console.log(err))
-        
+       
      
       }).
 
