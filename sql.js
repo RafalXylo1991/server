@@ -68,7 +68,7 @@ const getOneMonth=async(month)=>{
 
 const delHours=async(month,data)=>{
   return new Promise((resolve,recive)=>{
-    let x ="delete from "+month+"where data='"+data+"'";
+    let x ="delete from "+month+" where data="+data+"";
     console.log(x)
     client.query(x, (err, res) => {
         
