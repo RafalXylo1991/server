@@ -2,7 +2,8 @@
 
 
 const sqlite3 = require('./node_modules/sqlite3');
-const { Client } = require('pg')
+const { Client } = require('pg');
+const { symlinkSync } = require('fs');
 const client = new Client({
   host: 'ec2-50-19-255-190.compute-1.amazonaws.com',
   port: 5432,
@@ -70,7 +71,7 @@ const delHours=async(month,data)=>{
     let x ='delete from '+month+'where data='+data;
     client.query(x, (err, res) => {
         
-      
+      if(err){console.log(err)}
      resolve("Data was deleted...")
        
        
