@@ -71,7 +71,7 @@ const delHours=async(month,data)=>{
     client.query(x, (err, res) => {
         
       
-        resolve(res.rows)
+     resolve("Data was deleted...")
        
        
         
