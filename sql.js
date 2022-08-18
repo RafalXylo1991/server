@@ -85,7 +85,25 @@ const delHours=async(month,data)=>{
 
 
 }
+const updateHours=async(month,hours,data)=>{
+  return new Promise((resolve,recive)=>{
+    let x ="update "+month+" set nadgodziny="+hours+" where data="+data;
+    console.log(x)
+    client.query(x, (err, res) => {
+        
+      if(err){console.log(err)}
+     resolve("Data was deleted...")
+       
+       
+     
+      })
 
+
+
+  })
+
+
+}
   
-  module.exports = {connect,createTable,insertData,getOneMonth,delHours};
+  module.exports = {connect,createTable,insertData,getOneMonth,delHours,updateHours};
  

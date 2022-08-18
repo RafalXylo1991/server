@@ -70,6 +70,12 @@ router.delete('/deleteHours/:month/:data', function(req,res){
  sql.delHours(req.params.month,req.params.data).then(()=>{res.send("Usunięto")})
 return res.status(200);
   })
+
+ router.put('/updateHours/:month/:hours/:data', function(req,res){
+  sql.delHours(req.params.month,req.params.hours,req.params.data).then(()=>{res.send("Data was update...")})
+
+  return res.status(200)
+ }) 
 app.listen(port, () =>{ console.log(`Server running on localhost:${port}`)
 sql.connect().then(() => console.log('connected'))
 .catch(err => console.error('connection error', err.stack));
