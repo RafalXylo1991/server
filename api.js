@@ -72,7 +72,7 @@ return res.status(200);
   })
 
  router.put('/updateHours/:month/:hours/:data', function(req,res){
-  sql.delHours(req.params.month,req.params.hours,req.params.data).then(()=>{res.send("Data was update...")})
+  sql.updateHours(req.params.month,req.params.hours,req.params.data).then(()=>{res.send("Data was update...")})
 
   return res.status(200)
  }) 
