@@ -64,7 +64,25 @@ const getOneMonth=async(month)=>{
 
 
 }
+const getTables=async(month)=>{
+  return new Promise((resolve,recive)=>{
+    let x ="SELECT * FROM pg_catalog.pg_tables WHERE schemaname != 'pg_catalog' AND schemaname != 'information_schema';"
+    client.query(x, (err, res) => {
+        
+      
+        resolve(res.rows)
+       
+       
+        
+     
+      })
 
+
+
+  })
+
+
+}
 
 const delHours=async(month,data)=>{
   return new Promise((resolve,recive)=>{
@@ -105,5 +123,5 @@ const updateHours=async(month,hours,data)=>{
 
 }
   
-  module.exports = {connect,createTable,insertData,getOneMonth,delHours,updateHours};
+  module.exports = {connect,createTable,insertData,getOneMonth,delHours,updateHours,getTables};
  
