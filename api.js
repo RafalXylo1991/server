@@ -79,7 +79,7 @@ return res.status(200);
  router.get('/getTables', function(req,res){
   
 
-  return res.status(200)
+  return res.send("cycki")
  }) 
 app.listen(port, () =>{ console.log(`Server running on localhost:${port}`)
 sql.connect().then(() => console.log('connected'))
