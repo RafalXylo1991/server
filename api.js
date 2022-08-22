@@ -30,7 +30,8 @@ router.get("/", (req,res)=>{
 router.post('/cycki', async (req,res)=>{
 
 
-  console.log(req.body)
+  console.log(req.body["month"])
+  res.send("Done");
 })
 router.post('/sendHours', async (req, res)=> {
 
