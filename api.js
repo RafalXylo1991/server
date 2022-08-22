@@ -38,8 +38,9 @@ sunday:req.body["sunday"]
 
 }
 
-  console.log(cipka.data)
-  await sql.insertData()
+  
+
+  await sql.insertData(cipka).then(()=>{res.send("cycki")})
 
   res.send("Done");
 })
