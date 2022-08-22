@@ -42,7 +42,7 @@ sunday:req.body["sunday"]
 
   await sql.insertData(cipka).then(()=>{res.send("cycki")})
 
-  res.send("Done");
+  
 })
 router.post('/sendHours', async (req, res)=> {
 
