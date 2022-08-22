@@ -28,6 +28,7 @@ router.get("/", (req,res)=>{
 
 })
 router.post('/sendHours', async (req, res)=> {
+  console.log(req.body)
   const obj = Object.keys(req.body);
 
  
