@@ -27,15 +27,20 @@ app.use("/", router);
 router.get("/", (req,res)=>{
 
 })
+router.post('/cycki', async (req,res)=>{
+
+
+  console.log(req.body)
+})
 router.post('/sendHours', async (req, res)=> {
 
   const obj = Object.keys(req.body);
 
- console.log(req.body)
+ 
  
 
 console.log(obj[0])
-const cycki=JSON.parse(req.body)
+const cycki=JSON.parse(obj[0])
 try{
 await sql.insertData(cycki).then((result)=>{res.send("Done")})
 }catch(error){res.send("failed")}
