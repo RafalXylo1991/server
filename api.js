@@ -28,9 +28,19 @@ router.get("/", (req,res)=>{
 
 })
 router.post('/cycki', async (req,res)=>{
+const cipka={
+month:req.body["month"],
+data:req.body["data"],
+nadgodziny:req.body["nadgodziny"],
+week:req.body["week"],
+saturday:req.body["saturday"],
+sunday:req.body["sunday"]
 
+}
 
-  console.log(req.body["month"])
+  console.log(cipka.data)
+  await sql.insertData()
+
   res.send("Done");
 })
 router.post('/sendHours', async (req, res)=> {
