@@ -39,7 +39,7 @@ const insertData=async(data)=>{
   weekup.toUpperCase();
  let y= weekup+data.week[1,data.week.length]
   console.log(capitalizeFirstLetter("cycki"));
-let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")"
+let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(capitalizeFirstLetter(data.week)=="true"?1:0)+","+(capitalizeFirstLetter(data.saturday)=="true"?1:0)+","+(capitalizeFirstLetter(data.sunday)=="true"?1:0)+")"
   client.query(x, (err, res) => {
     
     
@@ -50,7 +50,7 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
   })
 }
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toLowerCase() + string.slice(1);
 }
 const getOneMonth=async(month)=>{
   return new Promise((resolve,recive)=>{
