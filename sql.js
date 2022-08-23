@@ -37,8 +37,8 @@ const insertData=async(data)=>{
   console.log(typeof(data.week))
   let weekup = data.week.charAt(0);
   weekup.toUpperCase();
-  weekup+data.week[1,data.length]
-  console.log(weekup);
+ let y= weekup+data.week[1,data.length]
+  console.log(y);
 let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")"
   client.query(x, (err, res) => {
     
