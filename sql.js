@@ -35,6 +35,9 @@ console.log('cipeczk')
 }
 const insertData=async(data)=>{
   console.log(typeof(data.week))
+  let weekup = data.week.charAt(0);
+  weekup.toUpperCase();
+  console.log(weekup);
 let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")"
   client.query(x, (err, res) => {
     
