@@ -49,6 +49,22 @@ let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgo
  
   })
 }
+const insertData2=async(data)=>{
+  console.log(typeof(data.week))
+  let weekup = data.week.charAt(0);
+  weekup.toUpperCase();
+ let y= weekup+data.week[1,data.week.length]
+  console.log(capitalizeFirstLetter("cycki"));
+let x ="insert into  "+data.month+" values('"+data.data+"',"+parseInt(data.nadgodziny)+"," +(data.week=="true"?1:0)+","+(data.saturday=="true"?1:0)+","+(data.sunday=="true"?1:0)+")"
+  client.query(x, (err, res) => {
+    
+    
+    if (err) throw err
+   
+    console.log(res)
+ 
+  })
+}
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toLowerCase() + string.slice(1);
 }
