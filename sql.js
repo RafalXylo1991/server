@@ -146,5 +146,5 @@ const updateHours=async(month,hours,data)=>{
 
 }
   
-  module.exports = {connect,createTable,insertData,getOneMonth,delHours,updateHours,getTables};
+  module.exports = {connect,createTable,insertData,getOneMonth,delHours,updateHours,getTables,insertData2};
  
